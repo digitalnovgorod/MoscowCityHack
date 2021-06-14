@@ -1,0 +1,124 @@
+{
+  "_from": "@ckeditor/ckeditor5-build-inline",
+  "_id": "@ckeditor/ckeditor5-build-inline@23.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-g3PoO+Mj/DM15aVarE6AC3Ia1uw0DnR0pzx0XQNuhr6RLy7kRJOYvRHZ5BJ8rsguWZGyRdVfVUeFG01EDkuWUQ==",
+  "_location": "/@ckeditor/ckeditor5-build-inline",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-build-inline",
+    "name": "@ckeditor/ckeditor5-build-inline",
+    "escapedName": "@ckeditor%2fckeditor5-build-inline",
+    "scope": "@ckeditor",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-build-inline/-/ckeditor5-build-inline-23.0.0.tgz",
+  "_shasum": "154146b4d336e3b1c96c956b4770b028edd3d86f",
+  "_spec": "@ckeditor/ckeditor5-build-inline",
+  "_where": "/Users/Mitya/Downloads/gis-config",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "The inline editor build of CKEditor 5 – the best browser-based rich text editor.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-adapter-ckfinder": "^23.0.0",
+    "@ckeditor/ckeditor5-autoformat": "^23.0.0",
+    "@ckeditor/ckeditor5-basic-styles": "^23.0.0",
+    "@ckeditor/ckeditor5-block-quote": "^23.0.0",
+    "@ckeditor/ckeditor5-ckfinder": "^23.0.0",
+    "@ckeditor/ckeditor5-core": "^23.0.0",
+    "@ckeditor/ckeditor5-dev-utils": "^20.0.0",
+    "@ckeditor/ckeditor5-dev-webpack-plugin": "^20.0.0",
+    "@ckeditor/ckeditor5-easy-image": "^23.0.0",
+    "@ckeditor/ckeditor5-editor-inline": "^23.0.0",
+    "@ckeditor/ckeditor5-essentials": "^23.0.0",
+    "@ckeditor/ckeditor5-heading": "^23.0.0",
+    "@ckeditor/ckeditor5-image": "^23.0.0",
+    "@ckeditor/ckeditor5-indent": "^23.0.0",
+    "@ckeditor/ckeditor5-link": "^23.0.0",
+    "@ckeditor/ckeditor5-list": "^23.0.0",
+    "@ckeditor/ckeditor5-media-embed": "^23.0.0",
+    "@ckeditor/ckeditor5-paragraph": "^23.0.0",
+    "@ckeditor/ckeditor5-paste-from-office": "^23.0.0",
+    "@ckeditor/ckeditor5-table": "^23.0.0",
+    "@ckeditor/ckeditor5-theme-lark": "^23.0.0",
+    "@ckeditor/ckeditor5-typing": "^23.0.0",
+    "postcss-loader": "^3.0.0",
+    "raw-loader": "^4.0.1",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^3.0.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "build"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor5-build",
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "wysiwyg",
+    "rich text",
+    "editor",
+    "html",
+    "contentEditable",
+    "editing",
+    "operational transformation",
+    "ot",
+    "collaboration",
+    "collaborative",
+    "real-time",
+    "framework"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "./build/ckeditor.js",
+  "name": "@ckeditor/ckeditor5-build-inline",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-build-inline"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "preversion": "npm run build"
+  },
+  "version": "23.0.0",
+  "warnings": [
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": ">=12.0.0",
+        "npm": ">=5.7.1"
+      },
+      "pkgid": "@ckeditor/ckeditor5-build-inline@23.0.0"
+    },
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": ">=12.0.0",
+        "npm": ">=5.7.1"
+      },
+      "pkgid": "@ckeditor/ckeditor5-build-inline@23.0.0"
+    }
+  ]
+}

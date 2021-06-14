@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>{{string.logo}}</title>
+    <link rel="shortcut icon" href="{{root}}/favicon.ico" />
+
+    <link id="bootstrap" href="{{root}}{{libs.bootstrap}}" rel="stylesheet" type="text/css" media="all" />
+    {{>theme}}
+
+    {{#libs.external.js}}
+    <script src="{{.}}" type="text/javascript" charset="utf-8"></script>
+    {{/libs.external.js}}
+
+    {{#libs.js}}
+    <script src="{{root}}{{.}}" type="text/javascript" charset="utf-8"></script>
+    {{/libs.js}}
+
+    {{#libs.external.css}}
+    <link href="{{.}}" rel="stylesheet" type="text/css" media="all" />
+    {{/libs.external.css}}
+
+    {{#libs.css}}
+    <link href="{{root}}{{.}}" rel="stylesheet" type="text/css" media="all" />
+    {{/libs.css}}
+
+
+    <script>
+          JSONEditor.defaults.options["theme"] = "bootstrap3";
+          JSONEditor.defaults.options["iconlib"] = "bootstrap3";
+          JSONEditor.defaults.options["object_layout"] = "grid";
+          JSONEditor.defaults.options["template"] = "default";
+          JSONEditor.defaults.options["show_errors"] = "interaction";
+          JSONEditor.defaults.options["required_by_default"] = 1;
+          JSONEditor.defaults.options["no_additional_properties"] = 1;
+          JSONEditor.defaults.options["display_required_only"] = 0;
+          JSONEditor.defaults.options["remove_empty_properties"] = 0;
+          JSONEditor.defaults.options["keep_oneof_values"] = 1;
+          JSONEditor.defaults.options["ajax"] = 1;
+          JSONEditor.defaults.options["ajaxCredentials"] = 0;
+          JSONEditor.defaults.options["show_opt_in"] = 0;
+          JSONEditor.defaults.options["disable_edit_json"] = 1;
+          JSONEditor.defaults.options["disable_collapse"] = 0;
+          JSONEditor.defaults.options["disable_properties"] = 1;
+          JSONEditor.defaults.options["disable_array_add"] = 0;
+          JSONEditor.defaults.options["disable_array_reorder"] = 0;
+          JSONEditor.defaults.options["disable_array_delete"] = 0;
+          JSONEditor.defaults.options["enable_array_copy"] = 0;
+          JSONEditor.defaults.options["array_controls_top"] = 0;
+          JSONEditor.defaults.options["disable_array_delete_all_rows"] = 0;
+          JSONEditor.defaults.options["disable_array_delete_last_row"] = 0;
+          JSONEditor.defaults.options["prompt_before_delete"] = 1;
+    </script>
+
+</head>
+<body id="express-admin" class="container">
+<div id="wrapper">
+    {{>header}}
+    {{>layout}}
+
+    <section id="content">
+        {{>breadcrumbs}}
+
+        {{>content}}
+    </section>
+
+    <div id="footer-push">&nbsp;</div>
+</div>
+<footer>
+    <p><small><a href="http://novgorod.digital/" target="_blank" class="text-muted">ИТ команда Цифровой Новгород 2020 год</a></small></p>
+</footer>
+
+<script type="module">
+//import HandlebarsTextbox from '/Handlebars/HandlebarsTextBox.js';
+//import ObservableMixin from '/@ckeditor/ckeditor5-utils/src/observablemixin.js';
+//import Plugin from '/@ckeditor/ckeditor5-core/src/plugin.js';
+//import RestrictedEditingMode from '/@ckeditor/ckeditor5-restricted-editing/src/restrictededitingmode.js';
+//import StandardEditingMode from '/@ckeditor/ckeditor5-restricted-editing/src/standardeditingmode.js';
+</script>
+
+
+<script type="text/javascript">
+
+function load_widget(widget) {
+    let url = 'http://'+window.location.host+'/view/widget?id='+widget[0].value;
+    let obj = null;
+
+    //try {
+        const my = fetch(url).json();
+    //    data = JSON.stringify(JSON.parse(my[0][2]['WIDGET_NAME']));
+       return  JSON.stringify(JSON.parse(my[0][2]['WIDGET_NAME']));
+
+
+};
+
+function load_form() {
+
+let jseditor = new Set()
+var jse;
+var jseditor1,jseditor2, jedata = {schema:{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "widget-{{string.langid}}.json",
+  "additionalProperties": false,
+},
+"code": "// The following lines are mandatory and readonly. You can add custom code above and below.\nif (jseditor instanceof window.JSONEditor) jseditor.destroy();\njseditor = new window.JSONEditor(document.querySelector(\"#json-editor-form\"), jedata);\n\njseditor.on('ready', function() {\n\n  var startVal = jseditor.getValue(),\n  submitButton = jseditor.root.getButton('Submit (console.log)', '', 'Submit (console.log)'),\n  restoreButton = jseditor.root.getButton('Restore to Default', '', 'Restore to Default'),\n  enableDisableButton = jseditor.root.getButton('Disable/Enable Form', '', 'Disable/Enable Form'),\n  button_holder = jseditor.root.theme.getHeaderButtonHolder();\n\n  button_holder.appendChild(submitButton);\n  button_holder.appendChild(restoreButton);\n  button_holder.appendChild(enableDisableButton);\n\n  jseditor.root.header.parentNode.insertBefore(button_holder, jseditor.root.header.nextSibling);\n\n  submitButton.addEventListener('click', function() {\n    console.log(jseditor.getValue());\n  });\n\n  restoreButton.addEventListener('click', function() {\n    jseditor.setValue(startVal);\n  });\n\n  enableDisableButton.addEventListener('click', function() {\n    if (!jseditor.isEnabled()) {\n      jseditor.enable();\n    } else {\n      jseditor.disable();\n    }\n  });\n\n});",
+"style": "",
+"desc": "Add optional description here. (HTML format)"
+};// The following lines are mandatory and readonly. You can add custom code above and below.
+if (jseditor1 instanceof window.JSONEditor) jseditor1.destroy();
+if (jseditor2 instanceof window.JSONEditor) jseditor2.destroy();
+
+
+function reqError(err) {
+  console.log('Fetch Error :-S', err);
+}
+
+if ($("#json-editor-form").length) {
+    var jseditor_instance_count = $('div[id="json-editor-form"]').length;
+      for (var j=0;j<jseditor_instance_count;j++) {
+      var fieldname = $('div[id="json-editor-form"]')[j].classList[0].split('][').reverse()[0].replace(']','');
+      var data = "";
+
+      console.log(j);
+
+      if ($('[name *= WIDGET_GUID]').length) {
+      const widget_name = $('[name *= WIDGET_GUID]').parent()[0].childNodes[2].childNodes[0].childNodes[0].childNodes[0].nodeValue;
+      const widget_nodes = $('[name *= WIDGET_GUID]')[0].childNodes;
+      var widget_id = '';
+      for (var i=0;i<widget_nodes.length && widget_id == '';i++) {
+        if (widget_nodes[i].text == widget_name) widget_id = widget_nodes[i].value;
+      }
+      const widget = widget_id;
+      console.log(widget);
+
+      if (widget!='') {
+            // load from API
+            let url = 'http://'+window.location.host+'/view/widget?id='+widget;
+
+            function reqListener() {
+              //console.log(this.responseText);
+              //console.log("!!!");
+              const data = '{"schema":'+JSON.stringify(JSON.parse(JSON.parse(this.responseText)[0][2]['WIDGET_NAME']))+'}';
+              const content = $('div[id="json-editor-form"]')[0];
+              //console.log(content);
+              //alert(data);
+              //console.log(jedata);
+
+              let jse1 = new window.JSONEditor(content, JSON.parse(data));
+              jseditor.add(jse1);
+              jse1.on('ready', function() {
+                  var json_string = $('input[name="'+jse1.element.className+'"]').attr('value');
+                  if (json_string.length)  {
+                      jse1.setValue(JSON.parse(json_string));
+                    } else {
+                      jse1.setValue(JSON.parse('[{}]'));
+                    }
+                //    $('.required:all').addClass('hidden');
+                    for (var i=0;i<$('label.required').length;i++) {
+                      $('label.required')[i].classList.add('hidden');
+                    }
+                    for (var i=0;i<$('h3.je-object__title').length;i++) {
+                      $('h3.je-object__title')[i].classList.add('hidden');
+                    }
+                    for (var i=0;i<$('span.je-object__controls').length;i++) {
+                      $('span.je-object__controls')[i].classList.add('hidden');
+                    }
+
+              });
+              jse1.on('change',() => {
+                // Do something
+                var json_string = JSON.stringify(jse1.getValue());
+                if (json_string != "[]") $('input[name="'+jse1.element.className+'"]').attr('value',json_string);
+              });
+
+              //console.log(data);
+            }
+            /*  var oReq = new XMLHttpRequest();
+              oReq.onload = reqListener;
+              oReq.onerror = reqError;
+              oReq.open('get', url, true);
+              oReq.send();
+            */
+
+
+                const fetchPromise = fetch(url);
+                //const main = document.getElementById("main-dnd");
+                fetchPromise.then(response => {
+                  return response.json();
+                }).then(r => {
+                  console.log(r);
+                  console.log(r.length);
+                  var rawdata = [];
+                  if (r.length > 0) {
+                    rawdata = JSON.parse(r[0][2]['WIDGET_NAME']);
+                  } else {
+                  }
+                  const data = '{"schema":'+JSON.stringify(rawdata)+'}';
+                  const content = $('div[id="json-editor-form"]')[0];
+                  let jse2 = new window.JSONEditor(content, JSON.parse(data));
+                  jseditor.add(jse2);
+                  jse2.on('ready', function() {
+                      var json_string = $('input[name="'+jse2.element.className+'"]').attr('value');
+                      if (json_string.length)  {
+                          jse2.setValue(JSON.parse(json_string));
+                        } else {
+                          jse2.setValue(JSON.parse('[{}]'));
+                        }
+                    //    $('.required:all').addClass('hidden');
+                        for (var i=0;i<$('label.required').length;i++) {
+                          $('label.required')[i].classList.add('hidden');
+                        }
+                        for (var i=0;i<$('h3.je-object__title').length;i++) {
+                          $('h3.je-object__title')[i].classList.add('hidden');
+                        }
+                        for (var i=0;i<$('span.je-object__controls').length;i++) {
+                          $('span.je-object__controls')[i].classList.add('hidden');
+                        }
+                        $("button").children("span").addClass('hidden');
+
+                  });
+                  jse2.on('change',() => {
+                    // Do something
+                    var json_string = JSON.stringify(jse2.getValue());
+                    if (json_string != "[]") $('input[name="'+jse2.element.className+'"]').attr('value',json_string);
+                  });
+
+                  //main.innerHTML = listOfNames(people);
+                });
+
+
+
+
+
+              }
+
+
+        } else {
+           // load from URL
+          data = JSON.stringify(jedata).replace('widget-','widget-'+fieldname+'-');
+          console.log(data);
+          let jse = new window.JSONEditor($('div[id="json-editor-form"]')[j], JSON.parse(data));
+          jseditor.add(jse);
+          jse.on('ready', function() {
+              var json_string = $('input[name="'+jse.element.className+'"]').attr('value');
+              if (json_string.length)  {
+                  jse.setValue(JSON.parse(json_string));
+                } else {
+                  jse.setValue(JSON.parse('[{}]'));
+                }
+            //    $('.required:all').addClass('hidden');
+                for (var i=0;i<$('label.required').length;i++) {
+                  $('label.required')[i].classList.add('hidden');
+                }
+                for (var i=0;i<$('h3.je-object__title').length;i++) {
+                  $('h3.je-object__title')[i].classList.add('hidden');
+                }
+                for (var i=0;i<$('span.je-object__controls').length;i++) {
+                  $('span.je-object__controls')[i].classList.add('hidden');
+                }
+                $("button").children("span").addClass('hidden');
+
+          });
+          jse.on('change',() => {
+            // Do something
+            var json_string = JSON.stringify(jse.getValue());
+            if (json_string != "[]") $('input[name="'+jse.element.className+'"]').attr('value',json_string);
+          });
+
+        }
+
+
+
+
+    }
+/*     if ($('div[id="json-editor-form"]').length >= 1) {
+      var fieldname = $('div[id="json-editor-form"]')[0].classList[0].split('][').reverse()[0].replace(']','');
+      var data = JSON.stringify(jedata).replace('widget-','widget-'+fieldname+'-');
+      jseditor1 = new window.JSONEditor($('div[id="json-editor-form"]')[0], JSON.parse(data));
+
+      jseditor1.on('ready', function() {
+        var json_string = $('input[name="'+jseditor1.element.className+'"]').attr('value');
+        if (json_string.length)  {
+            jseditor1.setValue(JSON.parse(json_string));
+          } else {
+            jseditor1.setValue(JSON.parse('[{}]'));
+          }
+      //    $('.required:all').addClass('hidden');
+          $('.je-header:first').addClass('hidden');
+          $('.je-switcher:first').addClass('hidden');
+          for (var i=0;i<$('label.required').length;i++) {
+            $('label.required')[i].classList.add('hidden');
+          }
+      });
+      jseditor1.on('change',() => {
+        // Do something
+        var json_string = JSON.stringify(jseditor1.getValue());
+        if (json_string != "[]") $('input[name="'+jseditor1.element.className+'"]').attr('value',json_string);
+      });
+    }
+    if ($('div[id="json-editor-form"]').length >= 2) {
+      var fieldname = $('div[id="json-editor-form"]')[1].classList[0].split('][').reverse()[0].replace(']','');
+      var data = JSON.stringify(jedata).replace('widget-','widget-'+fieldname+'-');
+      jseditor2 = new window.JSONEditor($('div[id="json-editor-form"]')[1], JSON.parse(data));
+
+      jseditor2.on('ready', function() {
+        var json_string = $('input[name="'+jseditor2.element.className+'"]').attr('value');
+        if (json_string.length)  {
+            jseditor2.setValue(JSON.parse(json_string));
+          } else {
+            jseditor2.setValue(JSON.parse('[{}]'));
+          }
+          $('.je-header:first').addClass('hidden');
+          $('.je-switcher:first').addClass('hidden');
+          for (var i=0;i<$('label.required').length;i++) {
+            $('label.required')[i].classList.add('hidden');
+          }
+      });
+      jseditor2.on('change',() => {
+        // Do something
+        var json_string = JSON.stringify(jseditor2.getValue());
+        if (json_string != "[]") $('input[name="'+jseditor2.element.className+'"]').attr('value',json_string);
+      });
+    }*/
+
+}
+}
+
+</script>
+
+<script type="text/javascript">
+var isDrop = false;
+/*  InlineEditor
+    .create( document.querySelector( '#editor' ) )
+    .then( editor => {
+      window.editor = editor;
+    } )
+    .catch( error => {
+      console.error( 'There was a problem initializing the editor.', error );
+    } );*/
+          /*  ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );*/
+                //import CodeBlock from '../@ckeditor/ckeditor5-code-block/src/codeblock';
+                //var _code_languages = ["plain","c","cs","cpp","html","xml","css","javascript","python","sql","php","perl","ruby","markdown","auto"];
+
+
+
+                var editors = [];
+                function createEditor( elementId, data ) {
+                    return CKEDITOR
+                        .create( document.querySelector( elementId ),{
+                            removePlugins: [ 'BlockQuote','PreElementToolbar','PreElement','RestrictedEditingMode','StandardEditingMode'],
+                          //removePlugins: [ 'BlockQuote','RestrictedEditingMode','StandardEditingMode'],
+                        //  toolbar: ['pre','codeBlock','|','undo','redo','|'],
+                          toolbar: ['code','codeBlock','|','undo','redo','|'],
+
+                    /*      preCodeBlock :{
+
+                                		languages: _code_languages.map( _language => {return{
+                                			language: _language,
+                                			title: _language=="cs"?"c#":_language
+                                		};}),
+                                		toolbar: [ 'EditLanguage', '|', 'SelectLanguage' , '|', 'HighlightCodeBlock', '|', 'CloseCodeBlock'],
+                                			noOfSpaceForTabKey: 4,
+                                		highlightConfig:{
+                                			// this function is called whenever syntax highlighting is requested.
+                                			// the highlighting pre element and language will be the arguments for this function
+                                			// this function should return syntax highlighted block.
+                                			// below example uses highlightjs as syntax highlighter
+                                			highlighter:( pre_block, language )=>{
+
+                                				// to undo highlighting simply uncomment below two lines and return pre_block as is
+                                				// or you can select plain/text/nohighlight option from language if highlighter supports
+                                				pre_block.innerHTML = pre_block.innerHTML.replace(/<br[ \/]*>/gi, '\n');
+                                				hljs.highlightBlock(pre_block); // refer https://github.com/highlightjs/highlight.js
+                                				return pre_block; // return highlighted pre block to plugin
+                                			}
+                                		}
+                                	},
+*/
+                          codeBlock: {
+                                         languages: [
+                                              { language: 'widget', label: 'Widget' },
+                                              { language: 'css', label: 'CSS' },
+                                              { language: 'html', label: 'HTML' },
+                                              { language: 'xml', label: 'XML' },
+                                              { language: 'javascript', label: 'JavaScript' }  ]
+
+                                            /*  languages: [
+                // Do not render the CSS class for the plain text code blocks.
+                { language: 'plaintext', label: 'Plain text', class: '' },
+
+                  // Use the "js" class for JavaScript code blocks.
+                // Note that only the first ("js") class will determine the language of the block when loading data.
+                { language: 'javascript', label: 'JavaScript', class: 'js javascript js-code' },
+
+                // Python code blocks will have the default "language-python" CSS class.
+                { language: 'python', label: 'Python' }
+            ]*/
+
+                                      },
+                          language: 'en'
+                        })
+                        .then( editor => {
+                        editors[ elementId ] = editor;
+                        if (editor.getData() == "") {
+                            editor.setData( data ); // You should set editor data here
+                          }
+
+
+                        /*  editor.document.registerPostFixer( writer => {
+                                const changes = editor.document.differ.getChanges();
+
+                                for ( const entry of changes ) {
+                                    if ( entry.type == 'insert' && entry.name == '$text' ) {
+                                        console.log(entry);
+                                        // Use `writer` to do your logic here.
+                                        // `entry` also contains `length` and `position` properties.
+                                    }
+                                }
+                            } );
+*/
+/*
+editor.plugins.get( 'Clipboard' ).on( 'inputTransformation', ( evt, data ) => {
+	//if ( data.content.childCount == 1 && isUrlText( data.content.getChild( 0 ) ) ) {
+	//	const linkUrl = data.content.getChild( 0 ).data;
+  console.log('!!!');
+
+		data.content = new ViewDocumentFragment( [
+			ViewElement(
+				'a',
+				{ href: 'linkUrl' },
+				[ new ViewText( 'linkUrl' ) ]
+			)
+		] );
+
+} );
+
+
+editor.editing.view.document.on( 'drop', ( evt, data ) => {
+    const dataTransfer = data.dataTransfer;
+    const Content = dataTransfer.getData( 'text/html' );
+
+      // Convert an RTF raw string to a view document fragment.
+    // Just like the clipboard feature, trigger the inputTransformation event
+    // to allow further processing of the content.
+    editor.fire( 'inputTransformation', { content: Content, dataTransfer } );
+
+    editor.editing.view.scrollToTheSelection();
+    evt.stop();
+} );
+*/
+/*editor.model.document.on( 'change:data', () => {
+    if ( editor.model.document.differ.getChanges().length > 0 ) {
+        console.log(editor.model.document.differ.getChanges());
+    }
+} );*/
+
+
+
+                       editor.model.document.on( 'change:data', ( evt, data ) => {
+                         console.log( data );
+                         console.log(evt);
+
+
+
+                        //  evt.stopPropagation();
+                        //  console.log( evt );
+
+                                  $(".ck.ck-content.ck-editor__editable").each(function(index, item) {
+                                    if (isDrop == true) {
+                                      const dt = editor.getData('text/html').replace('{'+'{','<pre data-language="Widget"><code>').replace('}'+'}','</code></pre>');
+                                  /*   editor.model.change( writer => {
+                                          const insertPosition = editor.model.document.selection.getFirstPosition();
+                                          var startPosition = editor.model.document.selection.getFirstPosition();
+                                          startPosition.path[1] = startPosition.path[1]-4;
+                                          console.log(insertPosition);
+
+
+
+                                        //  writer.insertElement( 'linkSTART', { linkHref: 'linkUrl' }, startPosition);
+
+                                      } );*/
+                                    /*  const insertPosition = editor.model.document.selection.getFirstPosition();
+                                      const viewFragment = editor.data.processor.toView( "<p>HTML Text</p>" );
+                                      const modelFragment = editor.data.toModel( viewFragment );
+                                        editor.model.insertContent( modelFragment, insertPosition);*/
+                                      //  evt.preventDefault();
+                                      //  editor.setData("<p>Testing</p>");
+                                        //$(this)[0].value.innerHTML(data);
+
+                                        editor.setData(dt,'text/html');
+                                        //const dta = item.innerHTML.replace('data-language="Widget"','class="code-dnd"');
+                                        //console.log(dta);
+                                        //item.innerHTML = dta;
+                                        //$(this)[0].innerHTML = $(this)[0].innerHTML.replace('одер','S');
+
+                                        isDrop = false;
+                                      }
+                          });
+
+
+
+                  } );
+
+              /*    const domEditableElement = document.querySelector( '.ck-editor__editable' );
+                  const editorInstance = domEditableElement.ckeditorInstance;
+
+                  editorInstance.editing.view.change( writer => {
+                          // Map the editable element in the DOM to the editable element in the editor's view.
+                          const viewEditableRoot = editorInstance.editing.view.domConverter.mapDomToView( domEditableElement );
+
+                          writer.setAttribute( 'myAttribute', 'value', viewEditableRoot );
+
+
+                  } );*/
+
+/*
+
+                                                let ck_elemBelow = "";
+
+                                                const ck1 = document.querySelector(".ck.ck-content");
+                                                ck1.addEventListener("dragover", (e) => {
+                                                  e.preventDefault();
+
+                                                  ck_elemBelow = e.target;
+                                                });
+
+                                                ck1.addEventListener("drop", (e) => {
+                                                  const todo = document.querySelector(
+                                                    `[data-id="${e.dataTransfer.getData("text/plain")}"]`
+                                                  );
+
+
+                                                  if (ck_elemBelow.tagName === "pre") {
+                                                    ck_elemBelow = ck_elemBelow.childList[0];
+                                                  }
+
+                                                  if (ck_elemBelow.classList.contains("code")) {
+                                                    const center =
+                                                      ck_elemBelow.getBoundingClientRect().y +
+                                                      ck_elemBelow.getBoundingClientRect().height / 2;
+
+                                                    if (e.clientY > center) {
+                                                      if (ck_elemBelow.nextElementSibling !== null) {
+                                                        ck_elemBelow = ck_elemBelow.nextElementSibling;
+                                                      } else {
+                                                        return;
+                                                      }
+                                                    }
+
+                                                    ck_elemBelow.parentElement.insertBefore(todo, ck_elemBelow);
+                                                    todo.className = ck_elemBelow.className;
+                                                  }
+
+                                                  if (e.target.classList.contains("language-css") || e.target.classList.contains("language-javascript")) {
+                                                    e.target.append(todo);
+
+                                                    if (e.target.classList.contains("drop")) {
+                                                      e.target.classList.remove("drop");
+                                                    }
+
+                                                    //const { name } = e.target.dataset;
+                                                    todo.className = "list-group-item-dnd";
+
+                                                  }
+                                                });
+
+
+*/
+
+
+
+
+
+
+
+                      //  editor.setData('<code>'+editor.getData()+'</code>');
+                    //    hljs.highlightBlock(editor);
+                    } )
+                        .catch( err => console.error( err ) );
+                }
+
+                $(document).ready( function() {
+                  load_form();
+                    if (jQuery(".ck-compact").length)
+                          {createEditor( '.ck-compact', 'Содержание: \n```javascript\n . \n```\n\n Комментарий: \n Автор/источник: \n' );
+                          }
+                    else {hljs.initHighlightingOnLoad()}
+                  //createEditor( 'form-control', 'test' );
+                });
+
+/*
+                CKEDITOR
+                    .create( document.querySelector( '.ck-compact' ),{
+//                      plugins: [ RestrictedEditingMode ],
+                      toolbar: ['codeBlock','|','undo','redo','|'],
+                      removePlugins: [ 'BlockQuote','PreElementToolbar','PreElement','RestrictedEditingMode','StandardEditingMode'],
+                      codeBlock: {
+                                      languages: [
+                                          { language: 'css', label: 'CSS' },
+                                          { language: 'html', label: 'HTML' },
+                                          { language: 'xml', label: 'XML' },
+                                          { language: 'JavaScript', label: 'JavaScript' }
+                                    ]
+                                  },
+              //                    restrictedEditing: {
+			         //                            allowedCommands: ['undo','redo' ],
+			         //                            allowedAttributes: [ 'html' ] },
+                      language: 'en'
+                    } )
+                    .catch( error => {
+                        console.error( error );
+                    } );
+*/
+
+
+</script>
+
+<script type="text/javascript">
+
+if (jQuery("main-dnd").length) {
+        console.log('http://'+window.location.host+'/widgetbar?id='+window.location.pathname.split('/')[2]);
+        $('main-dnd').load('http://'+window.location.host+'/widgetbar?id='+window.location.pathname.split('/')[2]);
+        const main = document.querySelector("main-dnd");
+
+        main.addEventListener("click", (e) => {
+          if (e.target.tagName === "BUTTON") {
+            const { name } = e.target.dataset;
+            if (name === "add-btn") {
+              const todoInput = main.querySelector('[data-name="todo-input"]');
+              if (todoInput.value.trim() !== "") {
+                const value = todoInput.value;
+                const template = `
+                <li class="list-group-item-dnd" draggable="true" data-id="${Date.now()}">
+                  <p>${value}</p>
+                  <button class="btn btn-outline-danger btn-sm hidden" data-name="remove-btn">X</button>
+                </li>
+                `;
+                const todosList = main.querySelector('[data-name="todos-list"]');
+                todosList.insertAdjacentHTML("beforeend", template);
+                todoInput.value = "";
+              }
+            } else if (name === "remove-btn") {
+              e.target.parentElement.remove();
+            }
+          }
+        });
+
+        main.addEventListener("dragenter", (e) => {
+          if (e.target.classList.contains("list-group-dnd")) {
+            e.target.classList.add("drop");
+          }
+          if (e.target.classList.contains("list-maingroup-dnd")) {
+            e.target.classList.add("drop");
+          }
+  /*        if (e.target.classList.contains("link-dnd")) {
+            e.preventDefault();
+            e.target = e.target.parentElement.parentElement;
+            vat i=1;
+            return true;
+          }*/
+        });
+
+        main.addEventListener("dragleave", (e) => {
+          isDrop = true;
+          if (e.target.classList.contains("drop")) {
+            e.target.classList.remove("drop");
+          }
+        });
+
+        main.addEventListener("dragstart", (e) => {
+          if (e.target.classList.contains("list-group-item-dnd")) {
+            e.dataTransfer.setData("text/plain", e.target.dataset.id);
+          }
+          if (e.target.classList.contains("link-dnd")) {
+            e.preventDefault();
+          }
+        });
+
+        let elemBelow = "";
+
+        main.addEventListener("dragover", (e) => {
+          e.preventDefault();
+
+          elemBelow = e.target;
+        });
+
+        main.addEventListener("drop", (e) => {
+          const todo = main.querySelector(
+            `[data-id="${e.dataTransfer.getData("text/plain")}"]`
+          );
+
+          if (elemBelow === todo) {
+            return;
+          }
+
+          if (elemBelow.tagName === "P" || elemBelow.tagName === "BUTTON") {
+            elemBelow = elemBelow.parentElement;
+          }
+
+          if (elemBelow.classList.contains("list-group-item-dnd")) {
+            const center =
+              elemBelow.getBoundingClientRect().y +
+              elemBelow.getBoundingClientRect().height / 2;
+
+            if (e.clientY > center) {
+              if (elemBelow.nextElementSibling !== null) {
+                elemBelow = elemBelow.nextElementSibling;
+              } else {
+                return;
+              }
+            }
+
+            elemBelow.parentElement.insertBefore(todo, elemBelow);
+            todo.className = elemBelow.className;
+          }
+
+          if (e.target.classList.contains("list-group-dnd") || e.target.classList.contains("list-maingroup-dnd")) {
+            e.target.append(todo);
+
+            if (e.target.classList.contains("drop")) {
+              e.target.classList.remove("drop");
+            }
+
+            const { name } = e.target.dataset;
+
+            if (name === "completed-list") {
+              if (todo.classList.contains("in-progress")) {
+                todo.classList.remove("in-progress");
+              }
+              todo.classList.add("completed");
+            } else if (name === "in-progress-list") {
+              if (todo.classList.contains("completed")) {
+                todo.classList.remove("completed");
+              }
+              todo.classList.add("in-progress");
+            } else {
+              todo.className = "list-group-item-dnd";
+            }
+          }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+{
+    "editors": {
+        "app": {
+            "path": "/Users/Mitya/Downloads/gis-config/config/custom/editors/app.js",
+            "slug": "upload"
+        },
+        "public": {
+            "external": {
+                "js": [
+                  "http://127.0.0.1:3000/ckeditor-custombuild/ckeditor.js"
+                ]
+            },
+            "local": {
+                "path": "/Users/Mitya/Downloads/gis-config/config/custom/editors",
+                "js": [
+                    "/jslib/tinymce/js/tinymce/tinymce.min.js",
+                    "/jslib/tinymce/js/tinymce/jquery.tinymce.min.js",
+                    "/editors.js"
+                ],
+                "js": ["/editors.js"]
+            }
+        }
+    },
+    "view1": {
+        "app": {
+            "path": "/Users/Mitya/Downloads/gis-config/config/custom/app1/app.js",
+            "slug": "view1",
+            "verbose": "Simple",
+            "mainview": {
+                "show": true
+            }
+        }
+    },
+    "view2": {
+        "app": {
+            "path"  : "/Users/Mitya/Downloads/gis-config/config/custom/app2/app.js",
+            "slug": "view2",
+            "verbose": "Custom global static files",
+            "mainview": {
+                "show": true
+            }
+        },
+        "public": {
+            "local": {
+                "path": "/Users/Mitya/Downloads/gis-config/config/custom/app2/public",
+                "css": [
+                    "/css/global.css"
+                ],
+                "js": [
+                    "/js/global.js"
+                ]
+            }
+        }
+    },
+    "view3": {
+        "app": {
+            "path"  : "/Users/Mitya/Downloads/gis-config/config/custom/app3/app.js",
+            "slug": "view3",
+            "verbose": "Custom local static files",
+            "mainview": {
+                "show": true
+            }
+        },
+        "public": {
+            "local": {
+                "path": "/Users/Mitya/Downloads/gis-config/config/custom/app3/public"
+            }
+        }
+    },
+    "view4": {
+        "app": {
+            "path"  : "/Users/Mitya/Downloads/gis-config/config/custom/app4/app.js",
+            "slug": "view4",
+            "verbose": "Breadcrumbs",
+            "mainview": {
+                "show": true
+            }
+        }
+    },
+    "stats": {
+        "app": {
+            "path"  : "/Users/Mitya/Downloads/gis-config/config/custom/highcharts/app.js",
+            "slug": "stats",
+            "verbose": "Highcharts Statistics",
+            "mainview": {
+                "show": true
+            }
+        }
+    },
+    "static": {
+        "public": {
+            "local": {
+                "path": "/Users/Mitya/Downloads/gis-config/config/custom/static",
+                "js": [
+                    "/mtm-tags.js",
+                    "/theme.js",
+                    "/images.js",
+                    "/binary.js"
+                ]
+            }
+        }
+    },
+    "events": {
+        "events": "/Users/Mitya/Downloads/gis-config/config/custom/events/events.js"
+    },
+    "widget": {
+        "app": {
+            "path": "/Users/Mitya/Downloads/gis-config/config/custom/widget/app.js",
+            "slug": "widget",
+            "verbose": "Widget",
+            "mainview": {
+                "show": true
+            }
+        }
+    },
+    "widgetbar": {
+        "app": {
+            "path": "/Users/Mitya/Downloads/gis-config/config/custom/widgetbar/app.js",
+            "slug": "widgetbar",
+            "verbose": "Widgetbar",
+            "mainview": {
+                "show": true
+            }
+        }
+    }
+}

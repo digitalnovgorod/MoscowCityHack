@@ -1,0 +1,2412 @@
+{
+    "ACCESSCONTROLLIST": {
+        "slug": "ACCESSCONTROLLIST",
+        "table": {
+            "name": "ACCESSCONTROLLIST",
+            "pk": "GUID",
+            "verbose": "ACCESSCONTROLLIST"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "TEAM_GUID",
+                "verbose": "TEAM_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "TEAM",
+                    "pk": "GUID",
+                    "columns": [
+                        "TEAM_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "PRODUCT_GUID",
+                "verbose": "PRODUCT_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "PRODUCT",
+                    "pk": "GUID",
+                    "columns": [
+                        "PRODUCT_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "RESOURCE_GUID",
+                "verbose": "RESOURCE_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "RESOURCE",
+                    "pk": "GUID",
+                    "columns": [
+                        "RESOURCE_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "APPLICATION": {
+        "slug": "APPLICATION",
+        "table": {
+            "name": "APPLICATION",
+            "pk": "GUID",
+            "verbose": "APPLICATION"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "APPLICATION_NAME",
+                "verbose": "APPLICATION_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "AREA": {
+        "slug": "AREA",
+        "table": {
+            "name": "AREA",
+            "pk": "GUID",
+            "verbose": "AREA"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "AREA_NAME",
+                "verbose": "AREA_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "AREA_CODE",
+                "verbose": "AREA_CODE",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "LEVEL_INDEX",
+                "verbose": "LEVEL_INDEX",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "TERRITORY_GUID",
+                "verbose": "TERRITORY_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "TERRITORY",
+                    "pk": "GUID",
+                    "columns": [
+                        "TERRITORY_NAME"
+                    ]
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "ELEMENT": {
+        "slug": "ELEMENT",
+        "table": {
+            "name": "ELEMENT",
+            "pk": "GUID",
+            "verbose": "ELEMENT"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "TEXTAREA",
+                "verbose": "TEXTAREA",
+                "control": {
+                    "textarea": true,
+                    "editor": "ck-compact"
+                },
+                "type": "longtext",
+                "allowNull": true,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "PROCESS_GUID",
+                "verbose": "PROCESS_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "PROCESS",
+                    "pk": "GUID",
+                    "columns": [
+                        "PROCESS_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "ELEMENT_NAME",
+                "verbose": "ELEMENT_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "RESULT",
+                "verbose": "RESULT",
+                "control": {
+                    "text": true
+                },
+                "type": "longtext",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "TYPE",
+                "verbose": "TYPE",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "SYS_TYPE",
+                    "fk": [
+                        "TYPE"
+                    ],
+                    "pk": [
+                        "TYPE"
+                    ],
+                    "pk_for_list": [
+                        "DOMAIN_NAME"
+                    ],
+                    "pk_keyvalue": [
+                        "BPM-ELM"
+                    ],
+                    "columns": [
+                        "TYPE",
+                        "DESCRIPTION"
+                    ]
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DOMAIN",
+                "verbose": "DOMAIN",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(10)",
+                "allowNull": true,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "SCHEMA",
+                "verbose": "SCHEMA",
+                "control": {
+                    "text": true
+                },
+                "type": "json",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "WIDGETAREA",
+                "verbose": "WIDGETAREA",
+                "control": {
+                    "text": true
+                },
+                "type": "json",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "WIDGETLIST",
+                "verbose": "WIDGETLIST",
+                "control": {
+                    "text": true
+                },
+                "type": "json",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "FEATURE": {
+        "slug": "FEATURE",
+        "table": {
+            "name": "FEATURE",
+            "pk": "GUID",
+            "verbose": "FEATURE"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "FEATURE_NAME",
+                "verbose": "FEATURE_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "CODE",
+                "verbose": "CODE",
+                "control": {
+                    "text": true
+                },
+                "type": "json",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "FEATURE_INDEX",
+                "verbose": "FEATURE_INDEX",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "APPLICATION_GUID",
+                "verbose": "APPLICATION_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "APPLICATION",
+                    "pk": "GUID",
+                    "columns": [
+                        "APPLICATION_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "JOB": {
+        "slug": "JOB",
+        "table": {
+            "name": "JOB",
+            "pk": "GUID",
+            "verbose": "JOB"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "JOB_NAME",
+                "verbose": "JOB_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "WORKFLOW_GUID",
+                "verbose": "WORKFLOW_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "WORKFLOW",
+                    "pk": "GUID",
+                    "columns": [
+                        "WORKFLOW_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "STATUS",
+                "verbose": "STATUS",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "SYS_STATUS",
+                    "fk": [
+                        "STATUS"
+                    ],
+                    "pk": [
+                        "STATUS"
+                    ],
+                    "pk_for_list": [
+                        "DOMAIN_NAME"
+                    ],
+                    "pk_keyvalue": [
+                        "ETL-JOB"
+                    ],
+                    "columns": [
+                        "STATUS",
+                        "DESCRIPTION"
+                    ]
+                },
+                "type": "varchar(10)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DOMAIN",
+                "verbose": "DOMAIN",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(10)",
+                "allowNull": true,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "PLAN_TIME",
+                "verbose": "PLAN_TIME",
+                "control": {
+                    "text": true
+                },
+                "type": "datetime",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "START_TIME",
+                "verbose": "START_TIME",
+                "control": {
+                    "text": true
+                },
+                "type": "datetime",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "FINISH_TIME",
+                "verbose": "FINISH_TIME",
+                "control": {
+                    "text": true
+                },
+                "type": "datetime",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "KEYFRAME": {
+        "slug": "KEYFRAME",
+        "table": {
+            "name": "KEYFRAME",
+            "pk": "GUID",
+            "verbose": "KEYFRAME"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "TEXTAREA",
+                "verbose": "TEXTAREA",
+                "control": {
+                    "textarea": true,
+                    "editor": "ck-compact"
+                },
+                "type": "longtext",
+                "allowNull": true,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "INDEX",
+                "verbose": "INDEX",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "SCRIPT_GUID",
+                "verbose": "SCRIPT_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "SCRIPT",
+                    "pk": "GUID",
+                    "columns": [
+                        "SCRIPT_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "ELEMENT_GUID",
+                "verbose": "ELEMENT_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "ELEMENT",
+                    "pk": "GUID",
+                    "columns": [
+                        "ELEMENT_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "RESULT_GUID",
+                "verbose": "RESULT_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "RESULT",
+                    "pk": "GUID",
+                    "columns": [
+                        "RESULT_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "VERSION_CONTROL",
+                "verbose": "VERSION_CONTROL",
+                "control": {
+                    "text": true
+                },
+                "type": "tinyint(4)",
+                "allowNull": true,
+                "defaultValue": "0",
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "LAYER": {
+        "slug": "LAYER",
+        "table": {
+            "name": "LAYER",
+            "pk": "GUID",
+            "verbose": "LAYER"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "LAYER_NAME",
+                "verbose": "LAYER_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "LAYER_INDEX",
+                "verbose": "LAYER_INDEX",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "MAP_GUID",
+                "verbose": "MAP_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "MAP",
+                    "pk": "GUID",
+                    "columns": [
+                        "MAP_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "MAP": {
+        "slug": "MAP",
+        "table": {
+            "name": "MAP",
+            "pk": "GUID",
+            "verbose": "MAP"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "MAP_NAME",
+                "verbose": "MAP_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "PARTICIPATION": {
+        "slug": "PARTICIPATION",
+        "table": {
+            "name": "PARTICIPATION",
+            "pk": "GUID",
+            "verbose": "PARTICIPATION"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "TEAM_GUID",
+                "verbose": "TEAM_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "TEAM",
+                    "pk": "GUID",
+                    "columns": [
+                        "TEAM_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "USER_GUID",
+                "verbose": "USER_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "USER",
+                    "pk": "GUID",
+                    "columns": [
+                        "USER_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "PROCESS": {
+        "slug": "PROCESS",
+        "table": {
+            "name": "PROCESS",
+            "pk": "GUID",
+            "verbose": "PROCESS"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "PROCESS_NAME",
+                "verbose": "PROCESS_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DESCRIPTION",
+                "verbose": "DESCRIPTION",
+                "control": {
+                    "text": true
+                },
+                "type": "text",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "PROCESSAREA",
+                "verbose": "PROCESSAREA",
+                "control": {
+                    "textarea": true,
+                    "editor": "bpmn-compact"
+                },
+                "type": "longtext",
+                "allowNull": true,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "TYPE",
+                "verbose": "TYPE",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "SYS_TYPE",
+                    "fk": [
+                        "TYPE"
+                    ],
+                    "pk": [
+                        "TYPE"
+                    ],
+                    "pk_for_list": [
+                        "DOMAIN_NAME"
+                    ],
+                    "pk_keyvalue": [
+                        "BPM-PRC"
+                    ],
+                    "columns": [
+                        "TYPE",
+                        "DESCRIPTION"
+                    ]
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "SCRIPT_GUID",
+                "verbose": "SCRIPT_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "SCRIPT",
+                    "pk": "GUID",
+                    "columns": [
+                        "SCRIPT_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DOMAIN",
+                "verbose": "DOMAIN",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(10)",
+                "allowNull": true,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "PRODUCT": {
+        "slug": "PRODUCT",
+        "table": {
+            "name": "PRODUCT",
+            "pk": "GUID",
+            "verbose": "PRODUCT"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "PRODUCT_NAME",
+                "verbose": "PRODUCT_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "STATUS",
+                "verbose": "STATUS",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "SYS_STATUS",
+                    "fk": [
+                        "STATUS"
+                    ],
+                    "pk": [
+                        "STATUS"
+                    ],
+                    "pk_for_list": [
+                        "DOMAIN_NAME"
+                    ],
+                    "pk_keyvalue": [
+                        "PRC-PRD"
+                    ],
+                    "columns": [
+                        "STATUS",
+                        "DESCRIPTION"
+                    ]
+                },
+                "type": "varchar(10)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DOMAIN",
+                "verbose": "DOMAIN",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(10)",
+                "allowNull": true,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "TYPE",
+                "verbose": "TYPE",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "SYS_TYPE",
+                    "fk": [
+                        "TYPE"
+                    ],
+                    "pk": [
+                        "TYPE"
+                    ],
+                    "pk_for_list": [
+                        "DOMAIN_NAME"
+                    ],
+                    "pk_keyvalue": [
+                        "PRC-PRD"
+                    ],
+                    "columns": [
+                        "TYPE",
+                        "DESCRIPTION"
+                    ]
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "RESOURCE": {
+        "slug": "RESOURCE",
+        "table": {
+            "name": "RESOURCE",
+            "pk": "GUID",
+            "verbose": "RESOURCE"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "RESOURCE_NAME",
+                "verbose": "RESOURCE_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DESCRIPTION",
+                "verbose": "DESCRIPTION",
+                "control": {
+                    "text": true
+                },
+                "type": "text",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "TYPE",
+                "verbose": "TYPE",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "SYS_TYPE",
+                    "fk": [
+                        "TYPE"
+                    ],
+                    "pk": [
+                        "TYPE"
+                    ],
+                    "pk_for_list": [
+                        "DOMAIN_NAME"
+                    ],
+                    "pk_keyvalue": [
+                        "GIS-RES"
+                    ],
+                    "columns": [
+                        "TYPE",
+                        "DESCRIPTION"
+                    ]
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "PRODUCT_GUID",
+                "verbose": "PRODUCT_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "PRODUCT",
+                    "pk": "GUID",
+                    "columns": [
+                        "PRODUCT_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DOMAIN",
+                "verbose": "DOMAIN",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(10)",
+                "allowNull": true,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "SOLUTION_GUID",
+                "verbose": "SOLUTION_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "SOLUTION",
+                    "pk": "GUID",
+                    "columns": [
+                        "SOLUTION_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "ROLE": {
+        "slug": "ROLE",
+        "table": {
+            "name": "ROLE",
+            "pk": "GUID",
+            "verbose": "ROLE"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "USER_GUID",
+                "verbose": "USER_GUID",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "USER",
+                    "pk": "GUID",
+                    "columns": [
+                        "USER_NAME"
+                    ]
+                },
+                "type": "varchar(40)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "ROLE_NAME",
+                "verbose": "ROLE_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DOMAIN",
+                "verbose": "DOMAIN",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(10)",
+                "allowNull": true,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "SCRIPT": {
+        "slug": "SCRIPT",
+        "table": {
+            "name": "SCRIPT",
+            "pk": "GUID",
+            "verbose": "SCRIPT"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "SCRIPT_NAME",
+                "verbose": "SCRIPT_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DESCRIPTION",
+                "verbose": "DESCRIPTION",
+                "control": {
+                    "text": true
+                },
+                "type": "text",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "SYS_DOMAIN": {
+        "slug": "SYS_DOMAIN",
+        "table": {
+            "name": "SYS_DOMAIN",
+            "pk": "DOMAIN_NAME",
+            "verbose": "SYS_DOMAIN"
+        },
+        "columns": [
+            {
+                "name": "DOMAIN_NAME",
+                "verbose": "DOMAIN_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(10)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DESCRIPTION",
+                "verbose": "DESCRIPTION",
+                "control": {
+                    "text": true
+                },
+                "type": "text",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "SYS_ROLE": {
+        "slug": "SYS_ROLE",
+        "table": {
+            "name": "SYS_ROLE",
+            "pk": [
+                "ROLE",
+                "DOMAIN_NAME"
+            ],
+            "verbose": "SYS_ROLE"
+        },
+        "columns": [
+            {
+                "name": "ROLE",
+                "verbose": "ROLE",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DOMAIN_NAME",
+                "verbose": "DOMAIN_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(10)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DESCRIPTION",
+                "verbose": "DESCRIPTION",
+                "control": {
+                    "text": true
+                },
+                "type": "text",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "SYS_STATUS": {
+        "slug": "SYS_STATUS",
+        "table": {
+            "name": "SYS_STATUS",
+            "pk": [
+                "STATUS",
+                "DOMAIN_NAME"
+            ],
+            "verbose": "SYS_STATUS"
+        },
+        "columns": [
+            {
+                "name": "STATUS",
+                "verbose": "STATUS",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "SYS_STATUS",
+                    "fk": [
+                        "STATUS"
+                    ],
+                    "pk": [
+                        "STATUS"
+                    ],
+                    "pk_for_list": [
+                        "DOMAIN_NAME"
+                    ],
+                    "pk_keyvalue": [
+                        ""
+                    ],
+                    "columns": [
+                        "STATUS",
+                        "DESCRIPTION"
+                    ]
+                },
+                "type": "varchar(10)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DOMAIN_NAME",
+                "verbose": "DOMAIN_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(10)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DESCRIPTION",
+                "verbose": "DESCRIPTION",
+                "control": {
+                    "text": true
+                },
+                "type": "text",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "PREV",
+                "verbose": "PREV",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(10)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "NEXT",
+                "verbose": "NEXT",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(10)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "SYS_TEMPLATE": {
+        "slug": "SYS_TEMPLATE",
+        "table": {
+            "name": "SYS_TEMPLATE",
+            "pk": [
+                "TEMPLATE_NAME",
+                "DOMAIN_NAME"
+            ],
+            "verbose": "SYS_TEMPLATE"
+        },
+        "columns": [
+            {
+                "name": "TEMPLATE_NAME",
+                "verbose": "TEMPLATE_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DOMAIN_NAME",
+                "verbose": "DOMAIN_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(10)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "TEMPLATE",
+                "verbose": "TEMPLATE",
+                "control": {
+                    "text": true
+                },
+                "type": "longtext",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "FEATURES",
+                "verbose": "FEATURES",
+                "control": {
+                    "text": true
+                },
+                "type": "json",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DESCRIPTION",
+                "verbose": "DESCRIPTION",
+                "control": {
+                    "text": true
+                },
+                "type": "text",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "SYS_TYPE": {
+        "slug": "SYS_TYPE",
+        "table": {
+            "name": "SYS_TYPE",
+            "pk": [
+                "TYPE",
+                "DOMAIN_NAME"
+            ],
+            "verbose": "SYS_TYPE"
+        },
+        "columns": [
+            {
+                "name": "TYPE",
+                "verbose": "TYPE",
+                "control": {
+                    "select": true,
+                    "multiple": false
+                },
+                "oneToMany": {
+                    "table": "SYS_TYPE",
+                    "fk": [
+                        "TYPE"
+                    ],
+                    "pk": [
+                        "TYPE"
+                    ],
+                    "pk_for_list": [
+                        "DOMAIN_NAME"
+                    ],
+                    "pk_keyvalue": [
+                        ""
+                    ],
+                    "columns": [
+                        "TYPE",
+                        "DESCRIPTION"
+                    ]
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DOMAIN_NAME",
+                "verbose": "DOMAIN_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(10)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "DESCRIPTION",
+                "verbose": "DESCRIPTION",
+                "control": {
+                    "text": true
+                },
+                "type": "text",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "TEAM": {
+        "slug": "TEAM",
+        "table": {
+            "name": "TEAM",
+            "pk": "GUID",
+            "verbose": "TEAM"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "TEAM_NAME",
+                "verbose": "TEAM_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "TERRITORY": {
+        "slug": "TERRITORY",
+        "table": {
+            "name": "TERRITORY",
+            "pk": "GUID",
+            "verbose": "TERRITORY"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "TERRITORY_NAME",
+                "verbose": "TERRITORY_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "TERRITORY_CODE",
+                "verbose": "TERRITORY_CODE",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "USER": {
+        "slug": "USER",
+        "table": {
+            "name": "USER",
+            "pk": "GUID",
+            "verbose": "USER"
+        },
+        "columns": [
+            {
+                "name": "GUID",
+                "verbose": "GUID",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(40)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "USER_NAME",
+                "verbose": "USER_NAME",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "USERPASSWORD",
+                "verbose": "USERPASSWORD",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "PASSWORDHASH",
+                "verbose": "PASSWORDHASH",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    }
+}

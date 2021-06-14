@@ -1,0 +1,29 @@
+{
+    "mysql": {
+        "host": "127.0.0.1",
+        "user": "root",
+        "password":"password",
+        "database":"GIS-CONFIG",
+        "port":3306,
+        "debug":true
+    },
+    "mysql_ya": {
+        "host": "rc1c-4yr7stkpu69euvvn.mdb.yandexcloud.net",
+        "user": "gisadmin",
+        "password":"gisadmin",
+        "database":"GIS-CONFIG",
+        "port":3306,
+        "debug":true,
+        "ssl"  : {
+            "ca" : "SERTIFICATE"
+  }
+    },
+    "server": {
+        "port": 3000
+    },
+    "app": {
+        "themes": true,
+        "layouts": true,
+        "languages": true
+    }
+}

@@ -1,0 +1,286 @@
+{
+    "title": "Конфигурация подключения",
+    "definitions": {
+        "comment": {
+            "title": "Comment:",
+            "type": "string",
+            "format": "textarea",
+            "default": ""
+        },
+        "yesno": {
+            "default": "yes",
+            "type": "string",
+            "enum": [
+                "yes",
+                "no"
+            ]
+        }
+    },
+    "type": "object",
+    "id": "https://niebert.github.io/json-editor",
+    "options": {
+        "disable_collapse": true,
+        "disable_edit_json": true,
+        "disable_properties": true,
+        "collapsed": false,
+        "hidden": false
+    },
+    "defaultProperties": [
+        "connection_details"
+    ],
+    "properties": {
+        "connection_details": {
+            "type": "array",
+            "id": "/properties/connection_details",
+            "title": "Connection Details",
+            "format": "tabs",
+            "options": {
+                "disable_collapse": false,
+                "disable_array_add": false,
+                "disable_array_delete": false,
+                "disable_array_reorder": true,
+                "disable_properties": true,
+                "collapsed": false,
+                "hidden": false
+            },
+            "items": {
+                "headerTemplate": "{{self.type}} - {{self.direction}}",
+                "oneOf": [
+                    {
+                        "type": "object",
+                        "id": "/properties/connection_details/oneof0",
+                        "title": "Website",
+                        "options": {
+                            "disable_collapse": true,
+                            "disable_edit_json": true,
+                            "disable_properties": true,
+                            "collapsed": false,
+                            "hidden": false
+                        },
+                        "defaultProperties": [
+                            "type",
+                            "direction",
+                            "host-base"
+                        ],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "id": "/properties/connection_details/items/properties/type",
+                                "title": "Type",
+                                "default": "Website",
+                                "enum": ["Website"],
+                                "format": "text",
+                                "description": "Description for 'type' Type: 'string' Path: '/properties/connection_details/items/properties/type'",
+                                "options": {
+                                    "hidden": false
+                                },
+                                "propertyOrder": 10
+                            },
+                            "direction": {
+                                "type": "string",
+                                "id": "/properties/connection_details/items/properties/direction",
+                                "title": "Direction",
+                                "default": "IN",
+                                "enum": [
+                                    "IN",
+                                    "OUT"
+                                ],
+                                "format": "text",
+                                "description": "Description for 'direction' Type: 'string' Path: '/properties/connection_details/items/properties/direction'",
+                                "options": {
+                                    "hidden": false
+                                },
+                                "propertyOrder": 20
+                            },
+                            "host-base": {
+                                "type": "string",
+                                "id": "/properties/connection_details/items/properties/host-base",
+                                "title": "Host Base",
+                                "default": "",
+                                "format": "text",
+                                "description": "Description for 'host-base' Type: 'string' Path: '/properties/connection_details/items/properties/host-base'",
+                                "options": {
+                                    "hidden": false
+                                },
+                                "propertyOrder": 30
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "id": "/properties/connection_details/oneof1",
+                        "title": "Local",
+                        "options": {
+                            "disable_collapse": true,
+                            "disable_edit_json": true,
+                            "disable_properties": true,
+                            "collapsed": false,
+                            "hidden": false
+                        },
+                        "defaultProperties": [
+                            "type",
+                            "direction",
+                            "path"
+                        ],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "id": "/properties/connection_details/items/properties/type",
+                                "title": "Type",
+                                "default": "Local",
+                                "enum": ["Local"],
+                                "format": "text",
+                                "description": "Description for 'type' Type: 'string' Path: '/properties/connection_details/items/properties/type'",
+                                "options": {
+                                    "hidden": false
+                                },
+                                "propertyOrder": 10
+                            },
+                            "direction": {
+                                "type": "string",
+                                "id": "/properties/connection_details/items/properties/direction",
+                                "title": "Direction",
+                                "default": "IN",
+                                "enum": [
+                                    "IN",
+                                    "OUT"
+                                ],
+                                "format": "text",
+                                "description": "Description for 'direction' Type: 'string' Path: '/properties/connection_details/items/properties/direction'",
+                                "options": {
+                                    "hidden": false
+                                },
+                                "propertyOrder": 20
+                            },
+                            "path": {
+                                "type": "string",
+                                "id": "/properties/connection_details/items/properties/path",
+                                "title": "Path",
+                                "default": "",
+                                "format": "text",
+                                "description": "Description for 'path' Type: 'string' Path: '/properties/connection_details/items/properties/path'",
+                                "options": {
+                                    "hidden": false
+                                },
+                                "propertyOrder": 30
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "id": "/properties/connection_details/oneof2",
+                        "title": "Yandex Object Data Storage",
+                        "options": {
+                            "disable_collapse": true,
+                            "disable_edit_json": true,
+                            "disable_properties": true,
+                            "collapsed": false,
+                            "hidden": false
+                        },
+                        "defaultProperties": [
+                            "type",
+                            "direction",
+                            "access-key",
+                            "secret_key",
+                            "bucket_location",
+                            "host_base",
+                            "host_bucket"
+                        ],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "id": "/properties/connection_details/items/properties/type",
+                                "title": "Type",
+                                "default": "YandexODS",
+                                "enum": ["YandexODS"],
+                                "format": "text",
+                                "description": "Description for 'type' Type: 'string' Path: '/properties/connection_details/items/properties/type'",
+                                "options": {
+                                    "hidden": false
+                                },
+                                "propertyOrder": 10
+                            },
+                            "direction": {
+                                "type": "string",
+                                "id": "/properties/connection_details/items/properties/direction",
+                                "title": "Direction",
+                                "default": "IN",
+                                "enum": [
+                                    "IN",
+                                    "OUT"
+                                ],
+                                "format": "text",
+                                "description": "Description for 'direction' Type: 'string' Path: '/properties/connection_details/items/properties/direction'",
+                                "options": {
+                                    "hidden": false
+                                },
+                                "propertyOrder": 20
+                            },
+                            "access-key": {
+                                "type": "string",
+                                "id": "/properties/connection_details/items/properties/access-key",
+                                "title": "Access Key",
+                                "default": "",
+                                "format": "text",
+                                "description": "Description for 'access-key' Type: 'string' Path: '/properties/connection_details/items/properties/access-key'",
+                                "options": {
+                                    "hidden": false
+                                },
+                                "propertyOrder": 30
+                            },
+                            "secret_key": {
+                                "type": "string",
+                                "id": "/properties/connection_details/items/properties/secret_key",
+                                "title": "Secret Key",
+                                "default": "",
+                                "format": "text",
+                                "description": "Description for 'secret_key' Type: 'string' Path: '/properties/connection_details/items/properties/secret_key'",
+                                "options": {
+                                    "hidden": false
+                                },
+                                "propertyOrder": 40
+                            },
+                            "bucket_location": {
+                                "type": "string",
+                                "id": "/properties/connection_details/items/properties/bucket_location",
+                                "title": "Bucket Location",
+                                "default": "",
+                                "format": "text",
+                                "description": "Description for 'bucket_location' Type: 'string' Path: '/properties/connection_details/items/properties/bucket_location'",
+                                "options": {
+                                    "hidden": false
+                                },
+                                "propertyOrder": 50
+                            },
+                            "host_base": {
+                                "type": "string",
+                                "id": "/properties/connection_details/items/properties/host_base",
+                                "title": "Host Base",
+                                "default": "",
+                                "format": "text",
+                                "description": "Description for 'host_base' Type: 'string' Path: '/properties/connection_details/items/properties/host_base'",
+                                "options": {
+                                    "hidden": false
+                                },
+                                "propertyOrder": 60
+                            },
+                            "host_bucket": {
+                                "type": "string",
+                                "id": "/properties/connection_details/items/properties/host_bucket",
+                                "title": "Host Bucket",
+                                "default": "",
+                                "format": "text",
+                                "description": "Description for 'host_bucket' Type: 'string' Path: '/properties/connection_details/items/properties/host_bucket'",
+                                "options": {
+                                    "hidden": false
+                                },
+                                "propertyOrder": 70
+                            }
+                        }
+                    }
+                ]
+            },
+            "propertyOrder": 10
+        }
+    }
+}

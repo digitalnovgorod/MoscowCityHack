@@ -1,0 +1,1 @@
+!function(o){const n=o.bg=o.bg||{};n.dictionary=Object.assign(n.dictionary||{},{"Block quote":"Цитат",Cancel:"Отказ",Code:"",Redo:"Повтори",Save:"Запазване",Undo:"Отмени","Upload in progress":"Качването е в процес"}),n.getPluralForm=function(o){return 1!=o}}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

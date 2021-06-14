@@ -1,0 +1,26 @@
+{
+    "bootstrap": "/csslib/bootstrap.min.css",
+    "css": [  
+        "/express-admin.css",
+        "/csslib/bootstrap-datetimepicker.min.css",
+        "/csslib/chosen.min.css",
+        "/styles-highlight/default.css",
+        "//cloud.typography.com/7971714/6011752/css/fonts.css",
+        "/Handlebars/HandlebarsTextBox.css",
+        "https://unpkg.com/bpmn-js@7.3.1/dist/assets/diagram-js.css",
+        "https://unpkg.com/bpmn-js@7.3.1/dist/assets/bpmn-font/css/bpmn.css",
+        "/jsoneditor/jsoneditor.min.css",
+        "/d-n-d/style.css"
+    ],
+    "js": [
+        "/jslib/jquery-1.9.1.min.js",
+        "/jslib/bootstrap.min.js",
+        "/jslib/bootstrap-datetimepicker.min.js",
+        "/jslib/chosen.jquery.min.js",
+        "/jslib/cookie.js",
+        "/express-admin.js",
+        "/highlight.pack.js",
+        "https://unpkg.com/bpmn-js@7.3.1/dist/bpmn-modeler.development.js",
+        "/jsoneditor/jsoneditor.js"
+      ]
+}

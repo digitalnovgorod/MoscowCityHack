@@ -1,0 +1,1 @@
+!function(e){const n=e.af=e.af||{};n.dictionary=Object.assign(n.dictionary||{},{"Block quote":"Blok-aanhaling",Cancel:"Kanselleer","Cannot upload file:":"Lêer nie opgelaai nie:",Code:"Kode","Remove Format":"Verwyder formatering",Save:"Berg"}),n.getPluralForm=function(e){return 1!=e}}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

@@ -1,0 +1,22 @@
+
+.handlebarsTextBox{
+    border: 1px solid #bababa;
+    background-color: white;
+    caret-color: black;
+    padding: 2px;
+    overflow-x: auto;
+    word-wrap: none;
+}
+
+.handlebarsTextBox .public-DraftStyleDefault-block {
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.handlebarsTextBox .public-DraftStyleDefault-block .placeholder-wrapper:last-of-type::after {
+    content: '' /* Solves last jump of line due to white-space: pre;*/
+}
+
+.handlebarsTextBox .public-DraftStyleDefault-block::-webkit-scrollbar { 
+    display: none; 
+}

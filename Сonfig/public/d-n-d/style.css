@@ -1,0 +1,169 @@
+main-dnd {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #222;
+}
+
+.col-4 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+      padding: 5px;
+}
+
+
+.row-dnd {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+    align-items: start;
+      justify-content: space-between;
+}
+
+.input-group-dnd {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.list-maingroup-dnd {
+  min-height: 40px;
+  height: 100%;
+  width: 100%;
+  min-width: 200px;
+  border: 2px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 1px;
+  margin-bottom: 0;
+  border: 2px dotted #222;
+  border-color:darkgray;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 22px;
+  margin-bottom: 5px;
+  background: transparent;
+
+}
+
+.list-group-dnd {
+  min-height: 40px;
+  height: 100%;
+  min-width: 100px;
+  border: 2px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 1px;
+  margin-bottom: 0;
+  border-radius: .25rem;
+  border: 1px dotted #222;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 22px;
+  background: transparent;
+}
+
+.list-group-item-dnd {
+  min-height: 40px;
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px;
+  position: relative;
+  margin: 2px;
+  padding: .75rem 1.25rem;
+  background-color: #EEE;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 20px;
+}
+.list-group-item-dnd.dnd-green {
+  background-color: #D4FFD4;
+  box-shadow:
+     inset 0 3px 2px rgba(255,255,255,.12),
+     inset 0 -3px 2px rgba(0,0,0,.05),
+     0 3px 2px rgba(0,0,0,.1);
+}
+.list-group-item-dnd.dnd-red {
+  background-color: #FFD4D4;
+  box-shadow:
+     inset 0 3px 2px rgba(255,255,255,.12),
+     inset 0 -3px 2px rgba(0,0,0,.05),
+     0 3px 2px rgba(0,0,0,.1);
+}
+
+pre[data-language="Widget"] {
+  min-height: 40px;
+  min-width: 370px;
+  width:200px;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  border: 1px;
+  position: relative;
+  padding: .75rem 1.25rem;
+  background-color: #ED9;
+  border: 1px solid rgba(0,0,0,.125);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background: linear-gradient(top, #FFEFAF, #ED9 );
+  background: -webkit-linear-gradient(top,#FFEFAF, #ED9);
+  background: -moz-linear-gradient(top, #FFEFAF, #ED9);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FFEFAF), color-stop(100%, #ED9));
+  box-shadow:
+     inset 0 3px 2px rgba(255,255,255,.12),
+     inset 0 -3px 2px rgba(0,0,0,.05),
+     0 3px 2px rgba(0,0,0,.3);
+}
+
+.list-group-item-dnd p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.completed p {
+  text-decoration: line-through;
+  padding: 0px;
+  margin: 0px;
+}
+
+.in-progress p {
+  border-bottom: 1px dashed #222;
+  padding: 0px;
+  margin: 0px;
+}
+
+@keyframes shadow {
+from {border-radius: 20px;}
+50% {border-radius: 24px;}
+to {border-radius: 20px;}
+}
+
+.list-maingroup-dnd.drop {
+  background: linear-gradient(#7A7, #DED);
+  animation: shadow  3s;
+}

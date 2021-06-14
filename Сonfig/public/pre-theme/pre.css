@@ -1,0 +1,54 @@
+.ck-code-languages-dropdown, .ck-code-languages-dropdown > div{
+	width: auto;
+}
+
+.ck-code-languages-dropdown > div > ul {
+	max-height: 350px;
+	overflow: auto;
+}
+
+.ck-code-languages-dropdown > div > ul > li{
+	min-width: auto !important;
+}
+
+/* .ck.ck-reset.ck-dropdown__panel.ck-dropdown__panel_nw{
+	max-height: 350px;
+	overflow: auto;
+} */
+
+.ck-content pre {
+    padding: 9px;
+    color: #353535;
+    background: hsla(0,0%,78%,.3);
+    border: 1px solid #c4c4c4;
+    border-radius: 2px;
+    white-space: pre-wrap;
+		min-height: 40px;
+}
+
+.ck-content pre code {
+    background: unset;
+    padding: 0;
+    border-radius: 0;
+}
+
+.ck.ck-editor__editable pre {
+    position: relative;
+}
+
+.ck.ck-editor__editable pre[data-language]:after {
+    content: attr(data-language);
+    position: absolute;
+}
+
+.ck.ck-editor__editable pre[data-language]:after {
+    top: -1px;
+    right: 0px;
+    background: #333;
+    font-size: 10px;
+    font-family: var(--ck-font-face);
+    line-height: 15px;
+    padding: 3px;
+    color: #fff;
+    white-space: nowrap;
+}

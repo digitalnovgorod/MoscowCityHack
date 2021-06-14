@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <style>
+      html, body {
+          height: 99%;
+      }
+  </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<style>*{padding:0;margin:0;border:0}*,:after,:before{box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}:active,:focus{outline:0}a:active,a:focus{outline:0}aside,footer,header,nav{display:block}body,html{height:100%;width:100%;font-size:100%;font-size:16px;line-height:1;font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%}button,input,textarea{font-family:inherit}input::-ms-clear{display:none}button{cursor:pointer}button::-moz-focus-inner{padding:0;border:0}a,a:visited{text-decoration:none}a:hover{text-decoration:none}li,ol,ul{list-style:none}img{vertical-align:top}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}th{display:table-cell;vertical-align:inherit;font-weight:400;text-align:-internal-center}*{transition:all .3s ease 0s}body{background-color:#FDFDFD}.wrapper{min-height:100%;min-width:360px;display:flex}.showcase{max-width:100%;background-color:#FEFEFE;margin:5px;display:flex;justify-content:center}.showcase__panel{border:1px solid #fdfdfd;padding:1px;margin:1px}.showcase__panel_left{display:flex;justify-content:center;flex-basis:100%}.showcase__left-content._hide{display:none}.showcase__left-bar{display:flex;justify-content:center;align-items:center;padding-right:3px;cursor:pointer}.showcase__left-bar:hover{background-color:#FDFDFD}.showcase__bottom-bar{display:flex;justify-content:center;padding:3px 0;margin-bottom:2px;cursor:pointer}.showcase__bottom-bar:hover{background-color:#f9f9f9}.showcase__top-bar{display:flex;justify-content:center;padding:3px 0;margin-bottom:2px;cursor:pointer}.showcase__top-bar:hover{background-color:#FAFAFA}.showcase__panel_right{display:flex;flex-direction:column}.showcase__header-content._hide{display:none}.showcase__panel_main{flex:1 1 auto}.showcase__footer-content._hide{display:none}.arrow-footer-updown{display:block;width:0;height:0;margin:0 0 0 5px;transition:transform .3s ease 0s;border-left:5px solid transparent;border-right:5px solid transparent;border-top:12px solid #DDD}.arrow-header-updown{display:block;width:0;height:0;margin:0 0 0 5px;transition:transform .3s ease 0s;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:12px solid #DDD}.arrow-left-right{display:inline-block;width:0;height:0;margin:0 0 0 2px;transition:transform .3s ease 0s;border-top:5px solid transparent;border-bottom:5px solid transparent;border-right:12px solid #DDD}._active.arrow-left-right{transform:rotate(180deg)}._active.arrow-footer-updown,._active.arrow-header-updown{transform:rotate(180deg)}</style>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12/dist/css/tabby-ui.min.css">
+  <link rel="stylesheet" type="text/css" href="https://colorlib.com/polygon/vendors/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://colorlib.com/polygon/build/css/custom.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12/dist/js/tabby.polyfills.min.js"></script>
+
+  <title>Аналитический инструмент категорийного менеджера</title>
+	<!--<link rel="icon" href="img/favicon.ico" type="image/x-icon"> -->
+
+</head>
+<body>
+	<div class="wrapper">
+		<div class="showcase">
+			<div class="showcase__panel showcase__panel_left">
+				<div class="showcase__left-content" style="width:200px; align:left; minimum-width:200px">
+
+                  <form action="/form/submit" id="common-form" method="post" novalidate="">
+<H2>Инструментальная консоль КМ</H2>
+                      <div id="form"><div class="form_row" id="60a59aebc1d5at5"><label for="form_60a59aebc1d5at5">Период</label><div class="field_row"><div class="field_widget"><select style="display: flex;width:100%;flex:2; height:30px; padding: 20px;" id="form_60a59aebc1d5at5" name="form[60a59aebc1d5at5]"><option value=""></option><option value="60a59aebce2fc">012021</option><option value="60a59aebce343">022021</option></select></div><div class="help_message"><span></span></div><div class="error"></div></div></div><div class="form_row" id="60a59a0088e74t5"><label for="form_60a59a0088e74t5">Группы</label><div class="field_row"><div class="field_widget"><select style="display: flex;width:100%;flex:2; height:30px; padding: 20px;" id="form_60a59a0088e74t5" name="form[60a59a0088e74t5]"><option value=""></option><option value="60a59a009a492">Г0</option><option value="60a59a009a4e1">Г1</option><option value="60a59a009a52b">Г2</option><option value="60a59a009a586">Г3</option></select></div><div class="help_message"><span>группы ТП</span></div><div class="error"></div></div></div><div class="form_row" id="60a59a793be55t5"><label for="form_60a59a793be55t5">Филиалы</label><div class="field_row"><div class="field_widget"><select style="display: flex;width:100%;flex:2; height:30px; padding: 20px;" id="form_60a59a793be55t5" name="form[60a59a793be55t5]"><option value=""></option><option value="60a59a794f573">Ф1</option><option value="60a59a794f5c9">Ф2</option><option value="60a59a794f617">Ф3</option></select></div><div class="help_message"><span></span></div><div class="error"></div></div></div><div class="form_row" id="60a59a909d8edt5"><label for="form_60a59a909d8edt5" class="required">Распределительные центры</label><span class="required" title="This field is required"> *</span><div class="field_row"><div class="field_widget"><select style="display: flex;width:100%;flex:2; height:30px; padding: 20px;" id="form_60a59a909d8edt5" name="form[60a59a909d8edt5]" required="required"><option value="60a59a90aa2da">РЦ0</option><option value="60a59a90aa323">РЦ1</option></select></div><div class="help_message"><span></span></div><div class="error"></div></div></div><div class="form_row" id="60a59b4c8d037t4"><label>дополняющие товары</label><div class="field_row"><div class="field_widget"><ul id="form_60a59b4c8d037t4"><li><input type="checkbox" id="form_60a59b4c8d037t4_0" name="form[60a59b4c8d037t4][]" value="60a59b7e5bddc"><label for="form_60a59b4c8d037t4_0">дополняющие товары</label></li><li><input type="checkbox" id="form_60a59b4c8d037t4_1" name="form[60a59b4c8d037t4][]" value="60a59b8cb00a3"><label for="form_60a59b4c8d037t4_1">вне листинга</label></li><li><input type="checkbox" id="form_60a59b4c8d037t4_2" name="form[60a59b4c8d037t4][]" value="60a59b9b45455"><label for="form_60a59b4c8d037t4_2">предложения поставщиков</label></li></ul></div><div class="help_message"><span></span></div><div class="error"></div></div></div><div class="form_row" id="60a59dc94e104t1"><label for="form_60a59dc94e104t1">Профиль</label><div class="field_row"><div class="field_widget"><input type="text" style="border:2px solid gray;" id="form_60a59dc94e104t1" name="form[60a59dc94e104t1]"></div><div class="help_message"><span></span></div><div class="error"></div></div></div><input type="hidden" id="form__form_id" name="form[_form_id]" value="60a599c33910ccbc428b457b"></div>
+
+                    </br>
+                          <center>        <input style="border:1px solid green;background-color:lightgreen;" type="submit" class="btn primary" id="submit-button" value="Выполнить анализ"> </center>
+
+          			<span id="loader" style="display: none;">
+                      	 <img src="/loader.gif" alt="Загрузка ...">            </span>
+                  </form>
+				</div>
+				<div id="idRollUp-ButtonLeftRight" class="showcase__left-bar">
+					<div class="showcase__left-bar-wrap">
+						<div class="showcase__button showcase__button_left-right"><span class="arrow-left-right"></span></div>
+					</div>
+				</div>
+			</div>
+			<div class="showcase__panel showcase__panel_right">
+				<div class="showcase__panel showcase__panel_header">
+					<div class="showcase__header-content">
+                                <ul data-tabs>
+                                  <li><a href="#inf"><br/>Инфографика<br/></a></li>
+                                	<li><a href="#simple-doughnut"><img src="https://downloader.disk.yandex.ru/preview/f42f823d80c3ca97df301cac7599f62c4ef284cab09cda13d2b59d42d4b7773c/60a5c0f3/8lCVAJDC630W0gG95IxK6xsRJLXTQMDhwoalBvCYbYjER6-tiAaq8fzk8lcSYhkX86yhCBYhSbQ1XtT-l83b0A%3D%3D?uid=0&filename=simple-doughnut-e298d117a13faaa9093206b28b98261f.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2694x1628" height="50px" width="50px"></a></li>
+                                	<li><a href="#stacked-column"><img src="https://downloader.disk.yandex.ru/preview/ab3c6af8b464c202a1fa5ef09abd4d365669445f9a5a2f7e503d3a9bd60398cd/60a5c0f3/ABuAeEEr-L5mw6p1Vh2xkBsRJLXTQMDhwoalBvCYbYhzuZpd8jfgXIFc_YFeXpJoUYW7vcbYCiYoW_VQ7zYrSw%3D%3D?uid=0&filename=stacked-column-1395b341e7b5a2f538cd3bde368ed143.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2880x1628" height="50px" width="50px" ></a></li>
+                                </ul>
+                                <div id="inf">Инфогравика сформирована сегодня в 09:30</div>
+                                <div id="simple-doughnut"><img src="https://downloader.disk.yandex.ru/preview/f42f823d80c3ca97df301cac7599f62c4ef284cab09cda13d2b59d42d4b7773c/60a5c0f3/8lCVAJDC630W0gG95IxK6xsRJLXTQMDhwoalBvCYbYjER6-tiAaq8fzk8lcSYhkX86yhCBYhSbQ1XtT-l83b0A%3D%3D?uid=0&filename=simple-doughnut-e298d117a13faaa9093206b28b98261f.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2694x1628"></div>
+                                <div id="stacked-column"><img src="https://downloader.disk.yandex.ru/preview/ab3c6af8b464c202a1fa5ef09abd4d365669445f9a5a2f7e503d3a9bd60398cd/60a5c0f3/ABuAeEEr-L5mw6p1Vh2xkBsRJLXTQMDhwoalBvCYbYhzuZpd8jfgXIFc_YFeXpJoUYW7vcbYCiYoW_VQ7zYrSw%3D%3D?uid=0&filename=stacked-column-1395b341e7b5a2f538cd3bde368ed143.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2880x1628"></div>
+					</div>
+					<div id="idRollUp-ButtonHeader-UpDown" class="showcase__bottom-bar">
+						<div class="showcase__bottom-bar-wrap">
+							<div class="showcase__button showcase__button_up-down"><span class="arrow-header-updown"></span></div>
+						</div>
+					</div>
+				</div>
+				<div class="showcase__panel showcase__panel_main" style="height: 100%">
+					<div class="showcase__content-panel-main" style="height: 100%">
+                      <div id="myGrid" class="ag-theme-alpine" style="height: 100%"></div>
+					</div>
+				</div>
+				<div class="showcase__panel showcase__panel_footer">
+					<div id="idRollUp-ButtonFooter-UpDown" class="showcase__top-bar">
+						<div class="showcase__top-bar-wrap">
+							<div class="showcase__button showcase__button_up-down"><span class="arrow-footer-updown"></span></div>
+						</div>
+					</div>
+					<div class="showcase__footer-content">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis similique odio beatae, porro sequi? Sint aliquam ipsum, laborum explicabo omnis animi unde dolores fugiat nisi voluptate pariatur quae sequi, maxime.
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+	<script lang="JavaSript">
+  "use strict"
+  /*  Код касающийся сервисной и интерфейсной части  */
+  document.addEventListener("DOMContentLoaded", function(event){
+    function elHasNeedClass(lineClasses, className){
+      return (lineClasses.indexOf(className, 0) !== -1)? true : false;
+    }
+    //сворачиваем левую панель
+    const clickButtonLeftRight = document.getElementById('idRollUp-ButtonLeftRight');
+    clickButtonLeftRight.addEventListener('click', function() {
+      console.log('сворачиваем левую панель');
+      const elem = document.querySelector('.arrow-left-right');
+      elem.classList.toggle('_active');
+      const elemNeedHide = document.querySelector('.showcase__left-content');
+      elemNeedHide.classList.toggle('_hide');
+      let elemBasisValue = document.querySelector('.showcase__panel_left');
+      elemBasisValue.style.flexBasis = (elHasNeedClass(elemNeedHide.className,'_hide'))?'0':'100%';
+    });
+    //сворачиваем верхнюю панель
+    const clickButtonHeaderUpDown = document.getElementById('idRollUp-ButtonHeader-UpDown');
+    clickButtonHeaderUpDown.addEventListener('click', function() {
+      console.log('сворачиваем верхнюю панель');
+      const elem = document.querySelector('.arrow-header-updown');
+      elem.classList.toggle('_active');
+      const elemNeedHide = document.querySelector('.showcase__header-content');
+      elemNeedHide.classList.toggle('_hide');
+    });
+    //сворачиваем верхнюю панель
+    const clickButtonFooterUpDown = document.getElementById('idRollUp-ButtonFooter-UpDown');
+    clickButtonFooterUpDown.addEventListener('click', function() {
+      console.log('сворачиваем нижнюю панель');
+      const elem = document.querySelector('.arrow-footer-updown');
+      elem.classList.toggle('_active');
+      const elemNeedHide = document.querySelector('.showcase__footer-content');
+      elemNeedHide.classList.toggle('_hide');
+    });
+  })
+  </script>
+  <script>
+	   var tabs = new Tabby('[data-tabs]');
+  </script>
+</body>
+</html>

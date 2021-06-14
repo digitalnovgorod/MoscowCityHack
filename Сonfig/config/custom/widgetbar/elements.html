@@ -1,0 +1,12 @@
+  <div class="input-group-dnd">
+    <h1 style="margin-top:5px;margin-left:15px;padding-top:0px;color:gray;"><i class="fa fa-magic" aria-hidden="true" color="gray"></i> </h1>
+    <ul class="list-maingroup-dnd" data-name="todos-list">
+      {{#records}}
+      <li class="{{class}}" data-id="{{id}}" draggable="true">
+        <p><a href="{{root}}{{link}}" class="link-dnd" draggable="false"><center><font size="4">{{pre}}</font><br><font size="1">{{name}}</font></center></a></p>
+      </li>
+      {{/records}}
+    </ul>
+    <h1 style="margin-top:5px;margin-left:0px;padding-top:0px;color:gray"><i class="fa fa-arrow-circle-down" aria-hidden="true" color="lightgray"></i></h1>
+  </div>
+  <br>
